@@ -1,23 +1,57 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './Components/Form';
+import Todo from './Components/Todo';
+import {useState} from 'react'
 
 function App() {
+
+  const[tasks, setTasks]= useState([]);
+  const[formImput, setFormImput]= useState('');
+
+  const handleChange =e =>{
+    setFormImput(e.target.value)
+  }
+  
+  const handleSubmit = e =>{
+    e.preventDefault()
+    if (formImput !==''){
+      const date = new Date().toLocaleDateString()
+      const newTask ={
+        date: date,
+        task: formImput,
+        complited: false
+      }
+      setTasks([...tasks,newTask])
+      setFormImput('')
+    }
+  }
+
+  const handleComplete = index =>{
+    const newTasks = [...tasks];
+    if (newTasks[index].complited ===false){
+      newTasks[index].complited= true
+    }
+    else {
+      newTasks[index].complited= false
+    }
+    setTasks(newTasks)
+  }
+
+  const handleRemove = index =>{
+    const newTasks = [...tasks];
+    newTasks.splice(index,1)
+    setTasks(newTasks)
+  }
+
+  const handleRemoveAll = ()=> {
+    setTasks([])
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form formImput={formImput} handleChange={handleChange} handleSubmit={handleSubmit}/>
+      <Todo tasks={tasks} handleComplete={handleComplete} handleRemove={handleRemove} handleRemoveAll={handleRemoveAll}/>
     </div>
   );
 }

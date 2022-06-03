@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 200px;
+  background: rgb(67, 120, 158);
   color: white;
+  box-sizing: border-box;
+  transition: all 0.25s ease-out;
+
+
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-delete{
+  margin-left: 20px;
+}
+i {
+  vertical-align: middle;
+}
+.imput {
+  height: 30px;
+  width: 260px;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 5px 20px;
+  box-shadow: 1px 0px 12px beige;
+}
+.btn-add,.deleteAll {
+  margin-left: 20px;
+  width: 150px;
+  font-size: 20px;
+  height: 30px;
+  border-radius: 10px;
+  background: #a6ddf3;
+  border: none;
+  cursor: pointer;
+
+}
+.todo li {
+  display: flex;
+  color: #d3d3d3;
+  margin: 20px 0;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 15px 10px 15px 0;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.btn-delete {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: #ffbdb0;
+  cursor: pointer;
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.checkAndTask {
+  display: flex;
+  line-height: 25px;
 }
+
+ul>li{
+  list-style-type: none;
+}
+input:required:valid {
+  background: rgba(245, 249, 213, 0.926);
+  border-color: rgb(35, 222, 255);
+}
+.deleteAll  {
+  padding: 5px 10px;
+}
+
