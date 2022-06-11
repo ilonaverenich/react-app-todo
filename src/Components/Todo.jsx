@@ -21,7 +21,7 @@ function Todo(props) {
                   <span className={task.complited ? 'crossOut' : 'crossIn'} >
                      {task.task}
                   </span>
-                  <button className="btn-edit" onClick={() => handleEdit(index)}> ed </button>
+               
                   <button className="btn-delete" onClick={() => handleRemove(index)}>X
                   </button>
 
