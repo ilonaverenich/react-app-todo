@@ -59,6 +59,16 @@ i {
   font-size: 18px;
 }
 
+.btn-edit {
+  background-color: transparent;
+  margin-left: 10px;
+  border: none;
+  font-size: 30px;
+  color: #ffbdb0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
 .checkAndTask {
   display: flex;
   line-height: 25px;
@@ -73,5 +83,12 @@ input:required:valid {
 }
 .deleteAll  {
   padding: 5px 10px;
+}
+
+.crossOut{
+  text-decoration:line-through;
+}
+.crossIn{
+  text-decoration: none;
 }
 
